@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2015 at 01:30 AM
+-- Generation Time: Apr 02, 2015 at 05:47 PM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -39,18 +39,18 @@ CREATE TABLE IF NOT EXISTS `students` (
   `sex` enum('M','F') NOT NULL DEFAULT 'M',
   `date_entered` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `lunch_cost` float DEFAULT NULL,
-  `student_id` int(10) unsigned NOT NULL,
+  `student_id` int(10) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`student_id`),
   KEY `city` (`city`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2147483647 ;
 
 --
 -- Dumping data for table `students`
 --
 
 INSERT INTO `students` (`first_name`, `last_name`, `email`, `street`, `city`, `state`, `zip`, `phone`, `birth_date`, `sex`, `date_entered`, `lunch_cost`, `student_id`) VALUES
-('hhhhhh', 'jjjjjjjjj', 'hhhhhhhh', 'gggggggg', 'hhhhhhh', 'ggggggggg', 1111, '11111111', '1111-11-11', 'M', '2015-03-30 19:28:20', 321, 0),
-('hhhhhh', 'jjjjjjjjj', 'hhhhhhhh', 'gggggggg', 'hhhhhhh', 'ggggggggg', 1111, '11111111', '1111-11-11', 'M', '2015-03-30 19:28:44', 321, 1);
+('qqqqq', 'wwwwwww', 'eeeeeee', 'rrrrrrrrr', 'ttttttttt', 'yyyyyyyy', 11111, '1111111111', '1111-12-11', 'M', '2015-04-01 21:29:14', 7654, 2),
+('ddd', 'ffffff', 'gggggg', 'hh', 'ttttttttt', 'yyyyyyyy', 11111, '1111111111', '1111-12-11', 'M', '2015-04-01 21:30:31', 321, 3);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

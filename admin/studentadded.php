@@ -1,89 +1,85 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Add Student</title>
-</head>
-<body>
+
 <?php
 
-if(isset($_POST['submit'])){
+if(isset($_POST['submit'])) {
 
     $data_missing = array();
 
-    if(empty($_POST['first_name'])){
+    if (empty($_POST['first_name'])) {
         $data_missing[] = 'First Name';
-    }else{
-        $f_name=trim($_POST['first_name']);
+    } else {
+        $f_name = trim($_POST['first_name']);
     }
 
 
-    if(empty($_POST['last_name'])){
+    if (empty($_POST['last_name'])) {
         $data_missing[] = 'Last Name';
-    }else{
-        $l_name=trim($_POST['last_name']);
+    } else {
+        $l_name = trim($_POST['last_name']);
     }
 
 
-    if(empty($_POST['email'])){
+    if (empty($_POST['email'])) {
         $data_missing[] = 'Email';
-    }else{
-        $email=trim($_POST['email']);
+    } else {
+        $email = trim($_POST['email']);
     }
 
 
-    if(empty($_POST['street'])){
+    if (empty($_POST['street'])) {
         $data_missing[] = 'Street';
-    }else{
-        $street=trim($_POST['street']);
+    } else {
+        $street = trim($_POST['street']);
     }
 
 
-    if(empty($_POST['city'])){
+    if (empty($_POST['city'])) {
         $data_missing[] = 'City';
-    }else{
-        $city=trim($_POST['city']);
+    } else {
+        $city = trim($_POST['city']);
     }
 
 
-    if(empty($_POST['state'])){
+    if (empty($_POST['state'])) {
         $data_missing[] = 'State';
-    }else{
-        $state=trim($_POST['state']);
+    } else {
+        $state = trim($_POST['state']);
     }
 
 
-    if(empty($_POST['zip'])){
+    if (empty($_POST['zip'])) {
         $data_missing[] = 'Zip Code';
-    }else{
-        $zip=trim($_POST['zip']);
+    } else {
+        $zip = trim($_POST['zip']);
     }
 
 
-    if(empty($_POST['birth_date'])){
+    if (empty($_POST['birth_date'])) {
         $data_missing[] = 'Birth Day';
-    }else{
-        $b_date=trim($_POST['birth_date']);
+    } else {
+        $b_date = trim($_POST['birth_date']);
     }
 
 
-    if(empty($_POST['phone'])){
+    if (empty($_POST['phone'])) {
         $data_missing[] = 'Phone Number';
-    }else{
-        $phone=trim($_POST['phone']);
+    } else {
+        $phone = trim($_POST['phone']);
     }
 
 
-    if(empty($_POST['sex'])){
+    if (empty($_POST['sex'])) {
         $data_missing[] = 'Sex';
-    }else{
-        $sex=trim($_POST['sex']);
+    } else {
+        $sex = trim($_POST['sex']);
     }
 
-    if(empty($_POST['lunch'])){
+    if (empty($_POST['lunch'])) {
         $data_missing[] = 'Lunch Cost';
-    }else{
-        $lunch=trim($_POST['lunch']);
+    } else {
+        $lunch = trim($_POST['lunch']);
     }
+
 
 
     if (empty($data_missing)){
@@ -94,7 +90,7 @@ if(isset($_POST['submit'])){
                   email, street, city, state, zip, phone, birth_date,
                   sex, date_entered, lunch_cost, student_id) VALUES (?, ?,
                   ?, ?, ?, ?, ?, ?, ?, ?, NOW(), ?, NULL) ";
-
+//ovde
         $stmt = mysqli_prepare($dbc, $query);
 
         mysqli_stmt_bind_param($stmt,"ssssssisssd", $f_name, $l_name,
@@ -127,7 +123,3 @@ if(isset($_POST['submit'])){
     }
 
 }
-
-?>
-</body>
-</html>

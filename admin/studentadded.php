@@ -88,9 +88,9 @@ if(isset($_POST['submit'])) {
 
         $query = "INSERT INTO students (first_name, last_name,
                   email, street, city, state, zip, phone, birth_date,
-                  sex, date_entered, lunch_cost, student_id) VALUES (?, ?,
-                  ?, ?, ?, ?, ?, ?, ?, ?, NOW(), ?, NULL) ";
-//ovde
+                  sex, date_entered, lunch_cost) VALUES (?, ?,
+                  ?, ?, ?, ?, ?, ?, ?, ?, NOW(), ?) ";
+//
         $stmt = mysqli_prepare($dbc, $query);
 
         mysqli_stmt_bind_param($stmt,"ssssssisssd", $f_name, $l_name,
